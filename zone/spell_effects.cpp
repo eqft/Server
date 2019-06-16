@@ -1430,6 +1430,14 @@ bool Mob::SpellEffect(Mob* caster, uint16 spell_id, float partial, int level_ove
 				}
 				// Racial Illusions
 				else {
+                    if (spell.base2[i] > -1 && spell.base2[i] < 5) {
+                        caster->SetTexture(spell.base2[i]);
+                    }
+
+                    if (spell.max[i] > -1 && spell.max[i] < 5) {
+                        caster->SetHelmTexture(spell.max[i]);
+                    }
+
 					SendIllusionPacket
 					(
 						spell.base[i],
